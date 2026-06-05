@@ -1,4 +1,4 @@
-# 🚀 FinancerAI
+## 🚀 FinancerAI
 
 **FinancerAI** é uma plataforma inteligente de controle financeiro, utilizando Inteligência Artificial para automatizar o registro de receitas, despesas e geração de relatórios financeiros através do WhatsApp.
 
