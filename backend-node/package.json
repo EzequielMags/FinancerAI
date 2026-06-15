@@ -1,0 +1,19 @@
+{
+  "name": "backend-node",
+  "version": "1.0.0",
+  "description": "Responsável: Ezequiel",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/config/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "fastify": "^5.8.5",
+    "nodemon": "^3.1.14"
+  }
+}
