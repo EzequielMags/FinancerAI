@@ -1,11 +1,14 @@
+import AIService from "../integrations/ai/ai.service.js"
+
 export default class messageService {
-    static processMessage(message) {
-        const result = {
+    static async processMessage(message) {
+        
+        const transaction = await AIService.interpretFinancialMessage(message)
+       
+
+        return {
             "success": true,
-            "receivedMessage": message,
-
+            transaction
         }
-
-        return result
     }
 }

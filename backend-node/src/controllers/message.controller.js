@@ -11,8 +11,8 @@ export default class MessageController {
                 throw new Error("A Mensagem é obrigatória. Tenta novamente")
             }
             
-            const result = messageService.processMessage(message)
-            reply.status(200).send({ message: "Mensagem processada", res: result})
+            const result = await messageService.processMessage(message)
+            reply.status(200).send(result)
             
 
 
