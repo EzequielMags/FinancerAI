@@ -101,12 +101,17 @@ export const FINANCIAL_PROMPT = `
     "description": "Mercado"
     }
 
+    Se a mensagem for um cumprimento (bom dia, boa tarde, boa noite), responda de uma
+    forma educada e que incentive a proxima mensagem do cliente seja algo referente a movimentação financeira
+
+
     Mensagem:
     "Bom dia, tudo bem?"
 
     Resposta:
     {
     "recognized": false,
+    "response": "Bom dia😊 tudo bem e com vc? Qual será a sua proxima movimentação financeira? "
     "reason": "Nenhuma movimentação financeira identificada"
     }
 `

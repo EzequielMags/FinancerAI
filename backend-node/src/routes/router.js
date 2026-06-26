@@ -1,4 +1,5 @@
 import MessageController from "../controllers/message.controller.js"
+import WhatsappController from "../controllers/whatsappController.js"
 
 export default async function routes (fastify, options) {
     fastify.get("/health", async(request, reply) => {
@@ -8,5 +9,9 @@ export default async function routes (fastify, options) {
     fastify.post("/message", async (request, reply) => {
         await MessageController.postMessage(request, reply)
         
+    })
+
+    fastify.get("/webhook", async (request, reply) => {
+        await WhatsappController.verifyWebhook(request, reply)
     })
 }

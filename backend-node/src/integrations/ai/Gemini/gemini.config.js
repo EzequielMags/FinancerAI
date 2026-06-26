@@ -9,9 +9,15 @@ if (!process.env.GEMINI_API_KEY) {
 const ai = new GoogleGenAI({ apiKey: GEMINI_API_KEY });
 
 export default async function GeminiResponse(prompt) {
-  const response = await ai.models.generateContent({
-    model: "gemini-2.5-flash",
-    contents: `${prompt}`,
-  });
-  console.log(response.text);
+  
+  try {
+    const response = await ai.models.generateContent({
+      model: "gemini-3.5-flash",
+      contents: `${prompt}`,
+    });
+    return JSON.parse(response.text)
+    
+  } catch (error) {
+      throw new Error("Erro ao comunicar com a IA")
+  }
 }

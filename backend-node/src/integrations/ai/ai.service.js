@@ -6,5 +6,6 @@ export default class AIService {
 
         const prompt = `${FINANCIAL_PROMPT} MENSAGEM: ${message}`
         const responseAI = await GeminiResponse(prompt)
+        return responseAI
        }
 }
