@@ -1,0 +1,13 @@
+POST http://user:0896a2d0-244c-42b1-90d1-b5f6b8391e96@localhost:8080/transactions
+content-Type: application/Json
+
+{
+  "type": "expense",
+  "amount": 50.00,
+  "category": "transport",
+  "description": "uber",
+}
+
+###
+
+GET http://user:0896a2d0-244c-42b1-90d1-b5f6b8391e96@localhost:8080/transactions
