@@ -1,11 +1,19 @@
 package com.financer.IA.dto;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
 import java.math.BigDecimal;
 
 public class TransactionDTO {
+    @NotBlank(message = "type ir required")
     private String type;
+    @NotNull(message = "Amount is required")
+    @Positive(message = "Amount must be positive")
     private BigDecimal amount;
+    @NotBlank(message = "Category ir required")
     private String category;
+    @NotBlank(message = "Description is required")
     private String description;
 
     public String getType() {

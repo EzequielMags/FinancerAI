@@ -1,13 +1,26 @@
-POST http://user:0896a2d0-244c-42b1-90d1-b5f6b8391e96@localhost:8080/transactions
-content-Type: application/Json
+POST http://admin@financer.com:123456@localhost:8080/transactions
+Content-Type: application/json
 
 {
   "type": "expense",
-  "amount": 50.00,
-  "category": "transport",
-  "description": "uber",
+  "amount": 100.00,
+  "category": "food",
+  "description": "Almoço"
 }
 
 ###
 
-GET http://user:0896a2d0-244c-42b1-90d1-b5f6b8391e96@localhost:8080/transactions
+GET http://admin@financer.com:123456@localhost:8080/transactions
+
+###
+
+
+POST http://user:64f38f59-d6c7-49f5-8165-688de784f041@localhost:8080/transactions
+Content-Type: application/json
+
+{
+  "type": "expense",
+  "amount": -50,
+  "category": "transport",
+  "description": "Uber"
+}
