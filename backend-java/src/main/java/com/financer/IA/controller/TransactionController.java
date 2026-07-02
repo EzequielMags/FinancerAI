@@ -28,4 +28,5 @@ public class TransactionController {
         List<Transaction> transactions = transactionService.findAll();
         return ResponseEntity.ok(transactions);
     }
+
 }

@@ -24,3 +24,7 @@ Content-Type: application/json
   "category": "transport",
   "description": "Uber"
 }
+
+###
+
+GET http://localhost:8080/dashboard/summary
