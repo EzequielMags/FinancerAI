@@ -14,4 +14,9 @@ export default async function routes (fastify, options) {
     fastify.get("/webhook", async (request, reply) => {
         await WhatsappController.verifyWebhook(request, reply)
     })
+
+
+    fastify.post("/webhook", async (request, reply) => {
+        await WhatsappController.receiveMessage(request, reply)
+    })
 }

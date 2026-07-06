@@ -12,7 +12,7 @@ export default async function GeminiResponse(prompt) {
   
   try {
     const response = await ai.models.generateContent({
-      model: "gemini-3.5-flash",
+      model: "gemini-2.5-flash",
       contents: `${prompt}`,
     });
     return JSON.parse(response.text)
