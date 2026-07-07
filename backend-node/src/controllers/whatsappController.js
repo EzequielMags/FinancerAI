@@ -1,3 +1,4 @@
+import javaApiService from "../services/JavaApiService.js"
 import messageService from "../services/message.service.js"
 import WhatsappService from "../services/whatsapp.service.js"
 
@@ -21,6 +22,7 @@ export default class WhatsappController {
     
     static async receiveMessage(request, reply) {
         try {
+
             const body = request.body
             const message = await WhatsappService.extractMessage(body)
 
@@ -30,8 +32,22 @@ export default class WhatsappController {
 
             const result = await messageService.processMessage(message)
 
+            console.log(result.transaction)
+
+            if (!result.transaction?.recognized) {
+                return reply.status(200).send({
+                    success: false,
+                    message: "Não foi possível interpretar a mensagem como transação financeira"
+                })
+            }
+
+            const savedTransaction = await javaApiService.createTransaction(result.transaction)
             console.log("Mensagem processada com sucesso")
-            return reply.status(200).send(result)
+
+            return reply.status(200).send({
+                success: true,
+                transaction: savedTransaction
+            })
         } catch (error) {
             console.error("Erro ao processar mensagem", error)
             return reply.status(200).send({ success: false, message: error.message })

@@ -111,37 +111,7 @@ export const FINANCIAL_PROMPT = `
     Resposta:
     {
     "recognized": false,
-    "response": "Bom dia😊 tudo bem e com vc? Qual será a sua proxima movimentação financeira? "
+    "response": "Bom dia😊 tudo bem e com vc? Qual será a sua proxima movimentação financeira?"
     "reason": "Nenhuma movimentação financeira identificada"
     }
-
-
-
-
-
-    Se foi enviado uma Imagem (comprovante), quero que converta as informações da Imagem para um objeto:
-    
-    Exemplo: "O comprovante consta o nome de um restaurante com o valor de 50 reais"
-
-    {
-        "recognized": true,
-        "type": "expense",
-        "amount": 50,
-        "category": "food",
-        "description": "Restaurant"
-    }
-
-
-    e se tiver um nome de alguma pessoa, quero q especifique com o seguinte objeto:
-
-    Exemplo: "O Comprovante consta o nome de Gabriel com o valor de 50 reais"
-
-    {
-        "recognized": true,
-        "type": "expense",
-        "amount": 50,
-        "category": "other",
-        "description": "Gabriel"
-    }
-
 `
