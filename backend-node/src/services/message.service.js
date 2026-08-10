@@ -1,4 +1,4 @@
-import AIService from "../integrations/ai/ai.service.js"
+import AIService from "./ai.service.js"
 
 export default class messageService {
     static async processMessage(message) {

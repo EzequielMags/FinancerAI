@@ -18,6 +18,6 @@ export default async function GeminiResponse(prompt) {
     return JSON.parse(response.text)
     
   } catch (error) {
-      throw new Error("Erro ao comunicar com a IA")
+      throw new Error(`Erro ao comunicar com a IA | ${error}`)
   }
 }
